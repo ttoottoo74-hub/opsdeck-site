@@ -1,0 +1,46 @@
+:root {
+  --bg: #ffffff; --fg: #1c1e21; --muted: #5c6470; --line: #e3e6ea;
+  --accent: #1f5fd6; --card: #f7f8fa;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14161a; --fg: #e8eaed; --muted: #a0a6b0; --line: #2a2e35;
+    --accent: #7aa7f0; --card: #1c1f25;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+  line-height: 1.75; font-size: 16px;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 96px; }
+header { border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 40px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit; }
+.mark {
+  width: 36px; height: 36px; border-radius: 9px; background: var(--accent);
+  color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 18px;
+}
+.brand strong { font-size: 18px; letter-spacing: -0.01em; }
+nav { margin-top: 18px; display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover, nav a[aria-current] { color: var(--accent); }
+h1 { font-size: 28px; letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font-size: 19px; margin: 40px 0 12px; letter-spacing: -0.01em; }
+h3 { font-size: 16px; margin: 24px 0 8px; }
+p, li { color: var(--fg); }
+.lead { color: var(--muted); margin: 0 0 8px; }
+.meta { color: var(--muted); font-size: 14px; }
+ul { padding-left: 20px; }
+li { margin: 6px 0; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: var(--card); font-weight: 600; white-space: nowrap; }
+.box { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin: 20px 0; }
+.box p:first-child { margin-top: 0; } .box p:last-child { margin-bottom: 0; }
+footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+a { color: var(--accent); }
+.en { border-top: 1px dashed var(--line); margin-top: 56px; padding-top: 32px; }
+.en h2 { font-size: 17px; }
+code { background: var(--card); padding: 1px 6px; border-radius: 4px; font-size: 90%; }
+@media (max-width: 480px) { .wrap { padding: 32px 16px 64px; } h1 { font-size: 24px; } table { font-size: 14px; } th, td { padding: 8px; } }

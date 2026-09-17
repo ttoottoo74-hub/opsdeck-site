@@ -20,7 +20,7 @@
   </header>
 
   <h1>개인정보처리방침</h1>
-  <p class="meta">시행일: 2026년 9월 16일 · 최종 개정: 2026년 9월 16일</p>
+  <p class="meta">시행일: 2026년 9월 16일 · 최종 개정: 2026년 9월 17일 (YouTube 연동 추가)</p>
 
   <p>담뿍(이하 "회사")은 콘텐츠 운영 자동화 콘솔 <strong>OpsDeck</strong>(이하 "서비스")을 제공합니다.
   이 방침은 서비스가 어떤 정보를 다루고, 그 정보가 어디에 저장되며, 연결된 소셜 미디어 계정에 무엇을 하는지 설명합니다.</p>
@@ -32,6 +32,8 @@
       <li>회사는 이용자의 콘텐츠나 계정 정보를 수집하는 서버를 운영하지 않습니다.</li>
       <li>연결된 SNS 계정에는 <strong>이용자가 승인한 콘텐츠를 게시하는 용도로만</strong> 접근합니다.</li>
       <li>연결 해제는 각 플랫폼 설정에서 언제든 가능하며, 즉시 효력이 생깁니다.</li>
+      <li>OpsDeck는 <strong>YouTube API 서비스</strong>를 사용합니다. YouTube 기능을 사용하면
+      <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>이 함께 적용됩니다.</li>
     </ul>
   </div>
 
@@ -63,6 +65,18 @@
     <li><code>video.publish</code> — (해당 권한이 승인된 경우) 이용자가 승인한 영상을 이용자 계정에 게시합니다.</li>
   </ul>
 
+  <h3>YouTube (YouTube API 서비스)</h3>
+  <p>OpsDeck는 YouTube API 서비스를 사용해 이용자 본인의 YouTube 채널에 영상을 올립니다.
+  YouTube 기능을 사용하면 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>이 함께 적용됩니다.</p>
+  <ul>
+    <li><code>youtube.upload</code> — 이용자가 승인한 숏폼 영상과 그 제목·설명을 이용자 채널에 업로드합니다.</li>
+    <li><code>youtube.readonly</code> — 연결된 채널이 맞는지 확인하기 위해 채널 이름, 핸들, 채널 ID, 영상 수를 조회합니다.
+    조회한 값은 연결 확인 화면에 표시만 하고 저장하지 않습니다.</li>
+  </ul>
+  <p>서비스가 저장하는 YouTube 관련 정보는 <strong>Google이 발급한 갱신 토큰(refresh token) 하나</strong>뿐이며,
+  이용자 기기의 설정 파일에만 저장됩니다. 업로드에 필요한 액세스 토큰은 메모리에만 두고 파일로 남기지 않습니다.
+  서비스는 이용자 채널의 기존 영상, 댓글, 구독자, 시청 기록, 분석 데이터를 조회하거나 저장하지 않습니다.</p>
+
   <h3>공통</h3>
   <p>서비스는 연결된 계정에서 <strong>다음을 하지 않습니다</strong>: 기존 게시물이나 댓글·메시지를 수집·저장·분석하는 행위,
   팔로워 목록이나 인사이트를 추출하는 행위, 이용자 콘텐츠를 제3자에게 제공하거나 판매하는 행위,
@@ -83,6 +97,7 @@
 
   <h2>4. 보관과 파기</h2>
   <p>모든 데이터는 이용자의 기기에 보관되며, 보관 기간은 이용자가 정합니다.
+  연결을 해제하면 콘솔은 해당 플랫폼의 토큰을 설정 파일에서 삭제하며, 이용자는 콘솔의 환경변수 화면에서 토큰을 직접 지울 수도 있습니다.
   콘솔에서 항목을 삭제하거나 데이터 폴더를 지우면 즉시 파기됩니다.
   프로그램을 삭제하면 해당 데이터도 함께 제거됩니다.</p>
 
@@ -92,6 +107,8 @@
     <li><strong>콘솔에서</strong>: 환경변수 설정에서 해당 토큰을 지우고 저장합니다.</li>
     <li><strong>Instagram</strong>: 설정 → 앱 및 웹사이트에서 OpsDeck 연결을 삭제합니다.</li>
     <li><strong>TikTok</strong>: 설정 → 보안 및 로그인 → 앱 관리에서 OpsDeck 권한을 해제합니다.</li>
+    <li><strong>YouTube</strong>: <a href="https://security.google.com/settings/security/permissions">Google 보안 설정의 서드파티 액세스 페이지</a>에서
+    OpsDeck의 액세스 권한을 삭제합니다.</li>
   </ul>
   <p>권한을 해제하면 서비스는 해당 계정에 더 이상 접근할 수 없습니다.
   플랫폼에서 받은 데이터의 삭제를 요청하시려면 아래 문의처로 연락해 주시기 바라며, 요청 접수 후 30일 이내에 처리합니다.</p>
@@ -138,6 +155,14 @@
       <li><strong>TikTok</strong> — <code>user.info.basic</code> to confirm which account is connected;
       <code>video.upload</code> to send an approved video to the user's own drafts, where the user decides
       whether to post it; <code>video.publish</code>, where granted, to publish a video the user approved.</li>
+      <li><strong>YouTube</strong> — OpsDeck uses <strong>YouTube API Services</strong>.
+      <code>youtube.upload</code> to upload a short video the user approved, with its title and description, to the
+      user's own channel; <code>youtube.readonly</code> to show the connected channel's title, handle, channel ID and
+      video count so the user can confirm the right channel is connected. These values are displayed only and not
+      stored. The only YouTube-related data stored is the Google-issued refresh token, kept in a settings file on the
+      user's own device; access tokens are held in memory only. OpsDeck does not read or store existing videos,
+      comments, subscribers, watch history or analytics. By using YouTube features, users are also subject to the
+      <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
     </ul>
     <p>OpsDeck publishes only to the connecting user's own account. It does <strong>not</strong> read, store or
     analyse existing posts, comments or messages; does not extract follower lists or insights; does not sell or
@@ -153,8 +178,9 @@
     <h3>Retention, deletion and revocation</h3>
     <p>The user controls retention entirely; deleting an item in the console, deleting the data folder, or
     uninstalling the application destroys the data immediately. Access can be revoked at any time by clearing
-    the token in the console, or from Instagram (Settings → Apps and Websites) or TikTok (Settings → Security
-    and login → Manage app permissions). To request deletion of data obtained from a platform, contact us at
+    the token in the console, from Instagram (Settings → Apps and Websites), from TikTok (Settings → Security
+    and login → Manage app permissions), or for YouTube from the
+    <a href="https://security.google.com/settings/security/permissions">Google security settings page</a>. To request deletion of data obtained from a platform, contact us at
     the address below; we respond within 30 days.</p>
 
     <h3>Children</h3>
@@ -168,6 +194,7 @@
 
   <footer>
     <p>담뿍 · 문의 ttoottoo74@gmail.com · <a href="./">OpsDeck 소개</a> · <a href="terms.html">이용약관</a></p>
+    <p>YouTube 기능 이용 시 <a href="https://www.youtube.com/t/terms">YouTube 서비스 약관</a>과 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>이 적용됩니다.</p>
   </footer>
 </div>
 </body>
